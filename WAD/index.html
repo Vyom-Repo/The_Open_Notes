@@ -88,6 +88,24 @@
             </ul>
           </div>
         </div>
+
+        <!-- Chapter 3 Accordion Item -->
+        <div class="sidebar-accordion active" id="ch3Accordion">
+          <button class="accordion-trigger" aria-expanded="true">
+            <span class="acc-left">
+              <i class="fa-solid fa-code acc-icon" style="color: #f59e0b;"></i>
+              <span class="acc-title">Chapter 3: JavaScript Fundamentals</span>
+            </span>
+            <i class="fa-solid fa-chevron-down acc-arrow"></i>
+          </button>
+          <div class="accordion-content open">
+            <ul class="subtopics-list">
+              <li><a href="#ch3-topic-1" class="sidebar-link"><span class="sub-num">1</span> Introduction to JavaScript</a></li>
+              <li><a href="#ch3-topic-2" class="sidebar-link"><span class="sub-num">2</span> Variables &amp; Data Types</a></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
       <!-- Section 2: Mid PYQ Papers -->
@@ -11571,6 +11589,1099 @@ button {
           </div>
 
         </section>
+
+        <hr class="topic-divider">
+
+
+        <!-- ================================================================
+             CHAPTER 3 LEAD BANNER: JAVASCRIPT FUNDAMENTALS
+             ================================================================ -->
+        <div class="chapter-lead-banner" id="chapter-3" style="margin-top: 2.5rem; margin-bottom: 2rem;">
+          <span class="ch-badge ch3-badge">CHAPTER 03</span>
+          <h2 class="ch-title">JavaScript Fundamentals</h2>
+        </div>
+
+        <!-- ================================================================
+             Chapter 3 - Topic 1: Introduction to JavaScript
+             ================================================================ -->
+        <section class="topic-block" id="ch3-topic-1">
+          
+          <div class="topic-title-wrapper">
+            <span class="topic-tag ch3-tag">CH3 &bull; TOPIC 01</span>
+            <h2 class="topic-heading">Introduction to JavaScript</h2>
+          </div>
+
+          <!-- Section 1: What is JavaScript? -->
+          <div class="note-section">
+            <div class="exam-tip-box" style="margin-bottom: 1.25rem;">
+              <div class="exam-tip-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Official Exam Definition (2 Marks Ready)</span>
+              </div>
+              <div class="exam-tip-content">
+                <strong>JavaScript (JS)</strong> is a lightweight, cross-platform, single-threaded, interpreted/JIT-compiled, dynamically typed programming language primarily used to build dynamic, interactive, and responsive web applications.
+              </div>
+            </div>
+
+            <h3 class="section-title">1. What is JavaScript? The Frontend Trinity</h3>
+            <p class="note-p lead-p">
+              Every modern website is built upon three foundational technologies functioning together:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Technology</th>
+                    <th style="width: 28%;">Core Role</th>
+                    <th style="width: 24%;">Guiding Question</th>
+                    <th style="width: 28%;">Real-World Example</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>HTML</strong></td>
+                    <td>Defines structure and content</td>
+                    <td><em>"What exists?"</em></td>
+                    <td>Creates buttons, headings, text, forms</td>
+                  </tr>
+                  <tr>
+                    <td><strong>CSS</strong></td>
+                    <td>Controls visual appearance &amp; layout</td>
+                    <td><em>"How does it look?"</em></td>
+                    <td>Applies colors, fonts, margins, Grid, Flexbox</td>
+                  </tr>
+                  <tr>
+                    <td><strong>JavaScript</strong></td>
+                    <td>Determines dynamic behavior &amp; logic</td>
+                    <td><em>"How does it behave?"</em></td>
+                    <td>Validates forms, handles clicks, fetches API data</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Trinity Interactive Live Sandbox -->
+            <div class="trinity-sandbox" style="margin: 1.5rem 0;">
+              <div class="trinity-badge-row">
+                <span class="trinity-badge trinity-html"><i class="fa-brands fa-html5"></i> HTML: Structure</span>
+                <span class="trinity-badge trinity-css"><i class="fa-brands fa-css3-alt"></i> CSS: Styling</span>
+                <span class="trinity-badge trinity-js"><i class="fa-brands fa-js"></i> JS: Interactivity</span>
+              </div>
+              
+              <div style="background: var(--box-note-bg); border: 1.5px solid var(--box-note-border); border-radius: 10px; padding: 1.25rem; max-width: 480px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                <h4 id="demoTrinityHeading" style="margin-top: 0; color: var(--text-primary); transition: color 0.3s ease;">
+                  Interactive Button Demo
+                </h4>
+                <p id="demoTrinityDesc" style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
+                  Click the button below to see JavaScript dynamically mutate state and DOM elements:
+                </p>
+                <div style="display: flex; justify-content: center; gap: 0.75rem; align-items: center;">
+                  <button id="demoTrinityBtn" class="terminal-btn" style="background: #f59e0b; color: #18181b; font-weight: 700; padding: 0.55rem 1.25rem; font-size: 0.9rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(245,158,11,0.3); cursor: pointer;" onclick="handleTrinityClick()">
+                    <i class="fa-solid fa-hand-pointer"></i> Click Me
+                  </button>
+                  <span id="demoTrinityCount" style="font-family: 'Courier New', Courier, monospace; font-size: 0.85rem; font-weight: 700; color: #d97706; background: rgba(245,158,11,0.12); padding: 0.4rem 0.75rem; border-radius: 6px; border: 1px solid rgba(245,158,11,0.3);">
+                    Clicks: 0
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Why JavaScript Was Created -->
+          <div class="note-section">
+            <h3 class="section-title">2. Why Was JavaScript Created?</h3>
+            <p class="note-p lead-p">
+              Created in 1995 by <strong>Brendan Eich</strong> at Netscape Communications, JavaScript was created to convert the web from a static document reader into an interactive, computational platform:
+            </p>
+
+            <ul class="feature-spec-list">
+              <li class="feature-spec-item" style="border-left: 3px solid #3b82f6;">
+                <div class="feature-spec-icon"><i class="fa-solid fa-bolt" style="color: #3b82f6;"></i></div>
+                <div class="feature-spec-content">
+                  <div class="feature-spec-header"><strong>1. Instant Client-Side Responsiveness</strong></div>
+                  <div class="feature-spec-desc">Reacts immediately to clicks, keypresses, and cursor hover states without requiring round-trip server calls.</div>
+                </div>
+              </li>
+              <li class="feature-spec-item" style="border-left: 3px solid #10b981;">
+                <div class="feature-spec-icon"><i class="fa-solid fa-check-double" style="color: #10b981;"></i></div>
+                <div class="feature-spec-content">
+                  <div class="feature-spec-header"><strong>2. Client-Side Form Validation</strong></div>
+                  <div class="feature-spec-desc">Validates user inputs, email formats, and required passwords locally before submitting data over the network.</div>
+                </div>
+              </li>
+              <li class="feature-spec-item" style="border-left: 3px solid #8b5cf6;">
+                <div class="feature-spec-icon"><i class="fa-solid fa-arrows-rotate" style="color: #8b5cf6;"></i></div>
+                <div class="feature-spec-content">
+                  <div class="feature-spec-header"><strong>3. Asynchronous Page Updates (No Full Reload)</strong></div>
+                  <div class="feature-spec-desc">Allows sections of a webpage to refresh dynamically with new data without forcing the entire browser tab to reload.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Section 3: JavaScript vs ECMAScript -->
+          <div class="note-section">
+            <h3 class="section-title">3. JavaScript vs. ECMAScript</h3>
+            <p class="note-p lead-p">
+              Students frequently confuse JavaScript and ECMAScript. They represent two complementary layers:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Concept</th>
+                    <th style="width: 37%;">ECMAScript (ECMA-262)</th>
+                    <th style="width: 38%;">JavaScript (Runtime Ecosystem)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Definition</strong></td>
+                    <td>The official standard specification</td>
+                    <td>The practical programming language implementation</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Scope</strong></td>
+                    <td>Defines core syntax, types, closures, classes, Promises</td>
+                    <td>ECMAScript Core <strong>+</strong> Host Web APIs (DOM, Fetch, Storage)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Analogy</strong></td>
+                    <td>The official engineering blueprint of an engine</td>
+                    <td>The fully assembled, drivable car with wheels and dashboard</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 4: Key Characteristics of JavaScript -->
+          <div class="note-section">
+            <h3 class="section-title">4. Key Characteristics of JavaScript</h3>
+            <p class="note-p lead-p">
+              JavaScript is distinguished by five fundamental runtime features:
+            </p>
+
+            <div class="note-card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+              <div class="note-card">
+                <h4 class="nc-title" style="color: #3b82f6;"><i class="fa-solid fa-microchip"></i> 1. High-Level Language</h4>
+                <p class="nc-body">Automatic memory management via a built-in Garbage Collector. Developers never manage memory pointers manually.</p>
+              </div>
+              <div class="note-card">
+                <h4 class="nc-title" style="color: #10b981;"><i class="fa-solid fa-shapes"></i> 2. Dynamically Typed</h4>
+                <p class="nc-body">Variables do not require type declarations. Types are bound to runtime values: <code>let x = 10; x = "Hi";</code>.</p>
+              </div>
+              <div class="note-card">
+                <h4 class="nc-title" style="color: #8b5cf6;"><i class="fa-solid fa-cubes"></i> 3. Multi-Paradigm</h4>
+                <p class="nc-body">Supports Procedural, Object-Oriented (prototypal &amp; classes), Functional (pure functions, map/filter), and Event-Driven styles.</p>
+              </div>
+              <div class="note-card">
+                <h4 class="nc-title" style="color: #f59e0b;"><i class="fa-solid fa-gauge-high"></i> 4. JIT-Compiled Performance</h4>
+                <p class="nc-body">Modern engines (like Google V8) compile source bytecode into native machine instructions on the fly via Just-In-Time (JIT) compilation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5: Methods of Including JavaScript in HTML -->
+          <div class="note-section">
+            <h3 class="section-title">5. Methods of Including JavaScript in a Webpage</h3>
+            <p class="note-p lead-p">
+              JavaScript can be included in HTML documents through three distinct techniques:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 18%;">Inclusion Type</th>
+                    <th style="width: 32%;">Code Example</th>
+                    <th style="width: 25%;">Pros &amp; Cons</th>
+                    <th style="width: 25%;">Best Practice Verdict</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Inline JS</strong></td>
+                    <td><code>&lt;button onclick="alert('Hi')"&gt;</code></td>
+                    <td>Quick test; mixes HTML &amp; JS, violates CSP</td>
+                    <td><span style="color: #ef4444; font-weight: 700;">Avoid in production</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Internal JS</strong></td>
+                    <td><code>&lt;script&gt; alert('Hi'); &lt;/script&gt;</code></td>
+                    <td>Single file; cannot be shared or cached</td>
+                    <td>Good for <strong>single-page demos</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>External JS</strong></td>
+                    <td><code>&lt;script src="main.js" defer&gt;&lt;/script&gt;</code></td>
+                    <td>Separation of concerns, cached by browser, reusable</td>
+                    <td><span style="color: #10b981; font-weight: 700;">Industry Standard</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="note-card" style="border-left: 4px solid #10b981; background: var(--box-note-bg); margin-top: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 0.92rem; color: #10b981;">
+                <i class="fa-solid fa-circle-check"></i> Best Practice: Always Use the <code>defer</code> Attribute!
+              </h4>
+              <p class="nc-body">
+                Writing <code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code> in the <code>&lt;head&gt;</code> ensures the browser downloads the script in parallel without blocking HTML parsing, executing only <em>after</em> the DOM tree is completely built!
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 6: Developer Console & First Program -->
+          <div class="note-section">
+            <h3 class="section-title">6. Developer Console &amp; Your First JavaScript Program</h3>
+            <p class="note-p lead-p">
+              The <code>console.log()</code> statement is the universal tool used by developers to output debugging information to the browser's developer console:
+            </p>
+
+            <div class="code-snippet">
+              <div class="code-header"><span><i class="fa-brands fa-js"></i> First Program</span></div>
+              <pre><code>// Printing messages and variables to the Developer Tools Console
+console.log("Hello, World!");
+console.log("Welcome to Semester 5 Web Application Development!");
+
+let totalScore = 95;
+console.log("Final Grade Score:", totalScore);</code></pre>
+            </div>
+
+            <!-- Virtual Console Simulator Widget -->
+            <div class="js-terminal-box" style="margin-top: 1rem;">
+              <div class="terminal-header">
+                <div class="terminal-controls">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">Interactive DevTools Console Simulator</div>
+                <div class="terminal-actions">
+                  <button class="terminal-btn" onclick="clearSimulatedConsole()"><i class="fa-solid fa-ban"></i> Clear</button>
+                </div>
+              </div>
+              <div class="terminal-presets">
+                <span class="preset-chip" onclick="execConsolePreset('str')">console.log("Hello JS")</span>
+                <span class="preset-chip" onclick="execConsolePreset('math')">console.log(10 + 20)</span>
+                <span class="preset-chip" onclick="execConsolePreset('typeNum')">typeof 100</span>
+                <span class="preset-chip" onclick="execConsolePreset('typeStr')">typeof "JavaScript"</span>
+                <span class="preset-chip" onclick="execConsolePreset('warn')">console.warn("Notice")</span>
+                <span class="preset-chip" onclick="execConsolePreset('err')">console.error("Bug Found")</span>
+              </div>
+              <div class="terminal-screen" id="simulatedConsoleScreen">
+                <div class="term-line">
+                  <span class="term-prompt">&gt;</span>
+                  <span class="term-output val-str">"Console ready. Click any preset above to test!"</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: Java vs JavaScript Exam Comparison -->
+          <div class="note-section">
+            <h3 class="section-title">7. Java vs. JavaScript: The Classic University Exam Comparison</h3>
+            <p class="note-p lead-p">
+              Despite sharing the word "Java" for historical marketing reasons in 1995, <strong>Java and JavaScript are two completely different programming languages</strong>:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Comparison Dimension</th>
+                    <th style="width: 37%;">Java</th>
+                    <th style="width: 38%;">JavaScript</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Creator &amp; Origin</strong></td>
+                    <td>James Gosling, Sun Microsystems (1995)</td>
+                    <td>Brendan Eich, Netscape Communications (1995)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Type System</strong></td>
+                    <td><strong>Statically typed:</strong> Types declared at compile time (e.g. <code>int x = 10;</code>)</td>
+                    <td><strong>Dynamically typed:</strong> Types bound to values at runtime (e.g. <code>let x = 10;</code>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Execution Environment</strong></td>
+                    <td>Runs on the <strong>Java Virtual Machine (JVM)</strong></td>
+                    <td>Runs inside <strong>Browser JS Engines (V8, etc.)</strong> &amp; Node.js</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Object-Oriented Model</strong></td>
+                    <td>Strict class-based object-oriented programming</td>
+                    <td>Multi-paradigm with <strong>prototypal inheritance</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Primary Domain</strong></td>
+                    <td>Enterprise backend servers, legacy Android applications</td>
+                    <td>Web applications (Frontend &amp; Full-Stack), browser scripts</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 8: Master Topic 1 Recap Dashboard -->
+          <div class="note-section">
+            <h3 class="section-title">8. Topic 1 Master Recap Dashboard</h3>
+            <p class="note-p lead-p">
+              Quick review summary of the foundational concepts introduced in Topic 1:
+            </p>
+
+            <div class="recap-dashboard">
+              <div class="recap-top-bar" style="background: linear-gradient(90deg, #f59e0b, #d97706, #3b82f6, #10b981);"></div>
+              
+              <div class="recap-grid">
+                
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-code" style="color: #f59e0b;"></i>
+                    <span class="recap-metric-label">Role in Trinity</span>
+                  </div>
+                  <div class="recap-metric-value">Dynamic Behavior</div>
+                  <p class="recap-metric-desc">HTML provides structure &bull; CSS styles &bull; JavaScript executes interactivity and logic.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-check" style="color: #10b981;"></i> The Frontend Backbone
+                  </div>
+                </div>
+
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-gears" style="color: #3b82f6;"></i>
+                    <span class="recap-metric-label">Runtime Engine</span>
+                  </div>
+                  <div class="recap-metric-value">V8 / SpiderMonkey</div>
+                  <p class="recap-metric-desc">JIT compiles bytecode into native machine instructions for high-performance execution.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-globe" style="color: #3b82f6;"></i> Runs in all browsers
+                  </div>
+                </div>
+
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-file-code" style="color: #8b5cf6;"></i>
+                    <span class="recap-metric-label">Best Script Link</span>
+                  </div>
+                  <div class="recap-metric-value">External + defer</div>
+                  <p class="recap-metric-desc"><code>&lt;script src="..." defer&gt;</code> ensures parallel download without blocking DOM parsing.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-star" style="color: #f59e0b;"></i> Enterprise Standard
+                  </div>
+                </div>
+
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-graduation-cap" style="color: #10b981;"></i>
+                    <span class="recap-metric-label">Exam Rule</span>
+                  </div>
+                  <div class="recap-metric-value">Java &ne; JavaScript</div>
+                  <p class="recap-metric-desc">Java is statically typed on JVM; JavaScript is dynamically typed in browser runtimes.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Classic 2-mark question
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Cheat Strip -->
+              <div class="recap-cheat-strip">
+                <div class="recap-cheat-label">
+                  <i class="fa-solid fa-key"></i> Quick Exam Rules
+                </div>
+                <div class="recap-cheat-pills">
+                  <span class="cheat-pill"><i class="fa-solid fa-check"></i> Java &ne; JavaScript</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-layer-group"></i> Prefer External + defer</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-terminal"></i> console.log() for debugging</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-bolt"></i> ECMAScript = Standard specification</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+
+        <hr class="topic-divider">
+
+        <!-- ================================================================
+             Chapter 3 - Topic 2: Variables and Data Types in JavaScript
+             ================================================================ -->
+        <section class="topic-block" id="ch3-topic-2">
+          
+          <div class="topic-title-wrapper">
+            <span class="topic-tag ch3-tag">CH3 &bull; TOPIC 02</span>
+            <h2 class="topic-heading">Variables and Data Types in JavaScript</h2>
+          </div>
+
+          <!-- Module 1: What is a Variable & Lifecycle -->
+          <div class="note-section">
+            <div class="exam-tip-box" style="margin-bottom: 1.25rem;">
+              <div class="exam-tip-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Official Exam Definition (2 Marks Ready)</span>
+              </div>
+              <div class="exam-tip-content">
+                A <strong>variable</strong> is a symbolic named binding that points to a value stored in computer memory. JavaScript is <strong>dynamically typed</strong>, meaning data types belong to runtime values rather than permanent variable declarations.
+              </div>
+            </div>
+
+            <h3 class="section-title">1. What is a Variable? Named Bindings &amp; The 3 Lifecycle Phases</h3>
+            <p class="note-p lead-p">
+              Programs function by continuously manipulating data (numbers, strings, booleans, objects). A variable provides a <strong>named reference</strong> through which code accesses and updates values in memory:
+            </p>
+
+            <div class="code-snippet">
+              <div class="code-header"><span><i class="fa-brands fa-js"></i> Variable Anatomy</span></div>
+              <pre><code>let studentAge = 21;
+// 'let'        &rarr; Declaration keyword
+// 'studentAge' &rarr; Variable Identifier (named binding in scope)
+// '='          &rarr; Assignment operator
+// '21'         &rarr; Value stored in memory</code></pre>
+            </div>
+
+            <h4 class="sub-section-title">The 3 Lifecycle Phases of a Variable</h4>
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Phase</th>
+                    <th style="width: 45%;">Technical Meaning</th>
+                    <th style="width: 30%;">Code Example</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Declaration</strong></td>
+                    <td>Registers the variable name into the scope's lexical environment without assigning a value.</td>
+                    <td><code>let age;</code> (Initial value is <code>undefined</code>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Initialization</strong></td>
+                    <td>Allocates memory and assigns the variable its initial starting value.</td>
+                    <td><code>let age = 21;</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Reassignment</strong></td>
+                    <td>Updates an existing variable with a new value.</td>
+                    <td><code>age = 22;</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Module 2: let vs const vs var -->
+          <div class="note-section">
+            <h3 class="section-title">2. Variable Declaration Keywords: let vs. const vs. var</h3>
+            <p class="note-p lead-p">
+              JavaScript provides three keywords for declaring variables. Their differences in <strong>scope</strong>, <strong>reassignment</strong>, <strong>redeclaration</strong>, and <strong>hoisting</strong> are heavily tested in exams:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Feature</th>
+                    <th style="width: 26%;">var (Legacy 1995)</th>
+                    <th style="width: 27%;">let (Modern ES6)</th>
+                    <th style="width: 27%;">const (Modern ES6)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Scope</strong></td>
+                    <td><strong>Function Scope</strong> (Leaks out of <code>if</code>/<code>for</code> blocks)</td>
+                    <td><strong>Block Scope</strong> (Confined within <code>{ }</code>)</td>
+                    <td><strong>Block Scope</strong> (Confined within <code>{ }</code>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Reassignable?</strong></td>
+                    <td><span style="color: #10b981; font-weight: 700;">Yes</span> (Can change value)</td>
+                    <td><span style="color: #10b981; font-weight: 700;">Yes</span> (Can change value)</td>
+                    <td><span style="color: #ef4444; font-weight: 700;">No</span> (Binding is locked)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Redeclarable?</strong></td>
+                    <td><span style="color: #ef4444; font-weight: 700;">Yes</span> (Accidental overwrite bug)</td>
+                    <td><span style="color: #10b981; font-weight: 700;">No</span> (SyntaxError)</td>
+                    <td><span style="color: #10b981; font-weight: 700;">No</span> (SyntaxError)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hoisting Behavior</strong></td>
+                    <td>Hoisted &amp; initialized to <code>undefined</code></td>
+                    <td>Hoisted into <strong>Temporal Dead Zone (TDZ)</strong></td>
+                    <td>Hoisted into <strong>Temporal Dead Zone (TDZ)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Initialization Required?</strong></td>
+                    <td>No (Defaults to <code>undefined</code>)</td>
+                    <td>No (Defaults to <code>undefined</code>)</td>
+                    <td><span style="color: #ef4444; font-weight: 700;">Yes</span> (Mandatory at declaration)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Best Practice Rule</strong></td>
+                    <td><span style="color: #ef4444; font-weight: 700;">Avoid</span> in modern code</td>
+                    <td>Use when <strong>reassignment is required</strong></td>
+                    <td><span style="color: #10b981; font-weight: 700;">Use by default</span> for 95% of variables</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="note-card" style="border-left: 4px solid #f59e0b; background: var(--box-note-bg); margin: 1rem 0;">
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 0.92rem; color: #d97706;">
+                <i class="fa-solid fa-triangle-exclamation"></i> Key Insight: const Locks the Binding, NOT Object Contents!
+              </h4>
+              <p class="nc-body">
+                <code>const user = { name: "Alex" };</code><br>
+                &bull; <code>user.name = "John";</code> &rarr; <span style="color: #10b981; font-weight: 700;">ALLOWED!</span> Mutating properties inside an object is permitted.<br>
+                &bull; <code>user = { name: "John" };</code> &rarr; <span style="color: #ef4444; font-weight: 700;">ERROR!</span> Reassigning the variable identifier to a new object is forbidden.
+              </p>
+            </div>
+
+            <!-- Interactive Hoisting Tester -->
+            <div class="event-loop-visualizer" style="margin-top: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 700;">
+                  <i class="fa-solid fa-microscope" style="color: #f59e0b;"></i> Interactive Declaration &amp; Hoisting Tester
+                </h4>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="terminal-btn" style="background: #475569;" onclick="testScopeBehavior('var')">Test var</button>
+                  <button class="terminal-btn" style="background: #0284c7;" onclick="testScopeBehavior('let')">Test let</button>
+                  <button class="terminal-btn" style="background: #d97706;" onclick="testScopeBehavior('const')">Test const</button>
+                </div>
+              </div>
+              <div id="scopeBehaviorOutput" style="background: #18181b; border: 1px solid #27272a; border-radius: 8px; padding: 0.85rem 1.15rem; font-family: 'Courier New', Courier, monospace; font-size: 0.85rem;">
+                <span style="color: #a1a1aa;">Click a test button above to simulate executing code before declaration line!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 3: Scoping & The Temporal Dead Zone (TDZ) -->
+          <div class="note-section">
+            <h3 class="section-title">3. Variable Scope (Global, Function, Block) &amp; The Temporal Dead Zone (TDZ)</h3>
+            <p class="note-p lead-p">
+              <strong>Scope</strong> dictates where a variable is accessible within your program:
+            </p>
+
+            <ul class="feature-spec-list">
+              <li class="feature-spec-item" style="border-left: 3px solid #3b82f6;">
+                <div class="feature-spec-icon"><i class="fa-solid fa-globe" style="color: #3b82f6;"></i></div>
+                <div class="feature-spec-content">
+                  <div class="feature-spec-header"><strong>1. Global Scope</strong></div>
+                  <div class="feature-spec-desc">Variables declared outside any function or block are accessible anywhere across the entire script.</div>
+                </div>
+              </li>
+              <li class="feature-spec-item" style="border-left: 3px solid #f59e0b;">
+                <div class="feature-spec-icon"><i class="fa-solid fa-box" style="color: #f59e0b;"></i></div>
+                <div class="feature-spec-content">
+                  <div class="feature-spec-header"><strong>2. Function Scope (var)</strong></div>
+                  <div class="feature-spec-desc">Variables declared with <code>var</code> belong to the function, ignoring inner <code>if</code> blocks and loops.</div>
+                </div>
+              </li>
+              <li class="feature-spec-item" style="border-left: 3px solid #10b981;">
+                <div class="feature-spec-icon"><i class="fa-solid fa-cube" style="color: #10b981;"></i></div>
+                <div class="feature-spec-content">
+                  <div class="feature-spec-header"><strong>3. Block Scope (let &amp; const)</strong></div>
+                  <div class="feature-spec-desc">Variables declared with <code>let</code>/<code>const</code> are strictly quarantined within their enclosing <code>{ }</code> braces.</div>
+                </div>
+              </li>
+            </ul>
+
+            <h4 class="sub-section-title">The Temporal Dead Zone (TDZ) Explained</h4>
+            <p class="note-p">
+              The <strong>Temporal Dead Zone (TDZ)</strong> is the zone in time between entering a scope and the actual line where a <code>let</code> or <code>const</code> variable is declared. Accessing the variable within the TDZ triggers an immediate <code>ReferenceError</code>:
+            </p>
+
+            <div class="code-live-grid">
+              <div class="code-side">
+                <div class="code-snippet" style="margin: 0;">
+                  <div class="code-header" style="color: #3b82f6;">var: Hoisted as undefined</div>
+                  <pre><code>console.log(x); // undefined (No crash!)
+var x = 10;
+console.log(x); // 10</code></pre>
+                </div>
+              </div>
+              <div class="code-side">
+                <div class="code-snippet" style="margin: 0;">
+                  <div class="code-header" style="color: #ef4444;">let / const: Trapped in TDZ</div>
+                  <pre><code>console.log(y); // ReferenceError!
+let y = 20;     // TDZ ends here
+console.log(y); // 20</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual TDZ Bar -->
+            <div class="script-timeline-card" style="margin-top: 1.25rem;">
+              <div class="timeline-bars" style="height: 32px; font-size: 0.78rem;">
+                <div class="bar-exec" style="width: 45%; background: rgba(239, 68, 68, 0.85); color: #fff;">
+                  TEMPORAL DEAD ZONE (Access &rarr; ReferenceError)
+                </div>
+                <div class="bar-html" style="width: 25%; background: #f59e0b; color: #18181b;">
+                  Declaration Line: let y = 20;
+                </div>
+                <div class="bar-fetch" style="width: 30%; background: #10b981; color: #fff;">
+                  Safe to Access &amp; Use
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 4: Naming Rules & Conventions -->
+          <div class="note-section">
+            <h3 class="section-title">4. Lexical Identifier Naming Rules &amp; Professional Conventions</h3>
+            <p class="note-p lead-p">
+              Identifiers must conform to strict syntax rules enforced by the JavaScript parser:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 40%;">Lexical Rule</th>
+                    <th style="width: 30%;">Valid Examples</th>
+                    <th style="width: 30%;">Invalid Examples &amp; Reason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Must begin with a letter, underscore (<code>_</code>), or dollar sign (<code>$</code>)</td>
+                    <td><code>score</code>, <code>_count</code>, <code>$price</code></td>
+                    <td><code>123name</code> (Cannot begin with digit)</td>
+                  </tr>
+                  <tr>
+                    <td>May contain letters, digits, underscores, and dollar signs</td>
+                    <td><code>item2</code>, <code>user_id</code></td>
+                    <td><code>user-name</code> (Hyphens parsed as minus)</td>
+                  </tr>
+                  <tr>
+                    <td>Strictly case-sensitive</td>
+                    <td><code>age</code>, <code>Age</code>, <code>AGE</code> (3 distinct variables)</td>
+                    <td>Mismatched case causes ReferenceError</td>
+                  </tr>
+                  <tr>
+                    <td>Cannot match reserved language keywords</td>
+                    <td><code>myClass</code>, <code>defaultVal</code></td>
+                    <td><code>let</code>, <code>const</code>, <code>class</code>, <code>return</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="note-card-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
+              <div class="note-card">
+                <h4 class="nc-title" style="color: #3b82f6;">camelCase (Variables &amp; Functions)</h4>
+                <p class="nc-body"><code>firstName</code>, <code>totalMarks</code>, <code>isUserLoggedIn</code></p>
+              </div>
+              <div class="note-card">
+                <h4 class="nc-title" style="color: #10b981;">UPPER_SNAKE_CASE (Configuration Constants)</h4>
+                <p class="nc-body"><code>MAX_RETRY_COUNT</code>, <code>API_BASE_URL</code>, <code>TAX_RATE</code></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 5: Data Types Classification & The 7 Primitives -->
+          <div class="note-section">
+            <h3 class="section-title">5. Data Types Classification &amp; The 7 Primitive Types</h3>
+            <p class="note-p lead-p">
+              JavaScript values are divided into <strong>Primitive Types</strong> (immutable, copied by value) and <strong>Reference Types</strong> (objects, mutable, copied by reference):
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 18%;">Primitive Type</th>
+                    <th style="width: 42%;">Description &amp; Key Characteristics</th>
+                    <th style="width: 40%;">Code Blueprint &amp; typeof</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. String</strong></td>
+                    <td>Textual characters enclosed in quotes or backticks (template literals).</td>
+                    <td><code>const name = "Alex";</code><br><code>typeof "Alex" &rarr; "string"</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Number</strong></td>
+                    <td>64-bit float numbers. Includes special values: <code>NaN</code> and <code>Infinity</code>.</td>
+                    <td><code>const age = 21; const pi = 3.14;</code><br><code>typeof NaN &rarr; "number"</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. BigInt</strong></td>
+                    <td>Arbitrary-precision integers beyond <code>2^53 - 1</code>. Formatted with <code>n</code> suffix.</td>
+                    <td><code>const large = 9007199254740995n;</code><br><code>typeof 10n &rarr; "bigint"</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. Boolean</strong></td>
+                    <td>Logical flag accepting only <code>true</code> or <code>false</code>.</td>
+                    <td><code>const isEnrolled = true;</code><br><code>typeof true &rarr; "boolean"</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>5. undefined</strong></td>
+                    <td>Variable exists in scope, but <strong>no value has ever been assigned</strong>.</td>
+                    <td><code>let score;</code><br><code>typeof score &rarr; "undefined"</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>6. null</strong></td>
+                    <td>Intentional programmer-assigned representation of <strong>"no value"</strong>.</td>
+                    <td><code>const user = null;</code><br><span style="color:#ef4444;"><code>typeof null &rarr; "object" (bug!)</code></span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>7. Symbol</strong></td>
+                    <td>Unique, immutable primitive identifier used for collision-free object property keys.</td>
+                    <td><code>const id = Symbol("id");</code><br><code>typeof id &rarr; "symbol"</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="note-card" style="border-left: 4px solid #0284c7; background: var(--box-note-bg); margin-top: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0284c7;">
+                <i class="fa-solid fa-code-compare"></i> Classic Exam Question: undefined vs. null
+              </h4>
+              <p class="nc-body">
+                &bull; <strong>undefined:</strong> System-level absence. Variable is declared but uninitialized.<br>
+                &bull; <strong>null:</strong> Programmer-assigned absence. Variable intentionally holds no object.<br>
+                &bull; <strong>Equality:</strong> <code>null == undefined</code> is <strong>true</strong> (loose equality), but <code>null === undefined</code> is <strong>false</strong> (strict equality).
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 6: Reference Types & The Memory Model -->
+          <div class="note-section">
+            <h3 class="section-title">6. Reference Types &amp; The Memory Model (Stack vs. Heap)</h3>
+            <p class="note-p lead-p">
+              All non-primitive values in JavaScript are <strong>Objects</strong> (including Arrays and Functions). They are stored differently in memory compared to primitive values:
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Feature</th>
+                    <th style="width: 37%;">Primitive Types (Value)</th>
+                    <th style="width: 38%;">Reference Types (Objects)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Storage</strong></td>
+                    <td>Stored directly on the <strong>Call Stack</strong></td>
+                    <td>Stored in the <strong>Memory Heap</strong> (Stack holds pointer address)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Mutability</strong></td>
+                    <td><strong>Immutable</strong> (Values cannot be altered in-place)</td>
+                    <td><strong>Mutable</strong> (Properties can be added, updated, or removed)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Assignment Copy</strong></td>
+                    <td><strong>Copies the value:</strong> Changes to copy never affect the original</td>
+                    <td><strong>Copies the pointer address:</strong> Both variables point to same object!</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="code-live-grid">
+              <div class="code-side">
+                <div class="code-snippet" style="margin: 0;">
+                  <div class="code-header" style="color: #3b82f6;">Primitives: Copied by Value</div>
+                  <pre><code>let a = 10;
+let b = a; // Independent copy
+b = 20;
+
+console.log(a); // 10 (Original unaffected)
+console.log(b); // 20</code></pre>
+                </div>
+              </div>
+              <div class="code-side">
+                <div class="code-snippet" style="margin: 0;">
+                  <div class="code-header" style="color: #f59e0b;">Objects: Copied by Reference</div>
+                  <pre><code>const user1 = { name: "Alex" };
+const user2 = user1; // Copies memory address!
+
+user2.name = "John"; // Mutates shared object
+
+console.log(user1.name); // "John" (Mutated!)
+console.log(user2.name); // "John"</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 7: Type Conversion, Coercion & 8 Falsy Values -->
+          <div class="note-section">
+            <h3 class="section-title">7. Type Conversion, Coercion &amp; The 8 Falsy Values</h3>
+            <p class="note-p lead-p">
+              Type transformation occurs either <strong>explicitly</strong> (by the programmer) or <strong>implicitly</strong> (automatically coerced by JavaScript operators):
+            </p>
+
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Conversion Target</th>
+                    <th style="width: 35%;">Explicit Method</th>
+                    <th style="width: 40%;">Implicit Coercion Trap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>To String</strong></td>
+                    <td><code>String(100)</code> &rarr; <code>"100"</code></td>
+                    <td><code>"5" + 2</code> &rarr; <code>"52"</code> (Addition coerces to string)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>To Number</strong></td>
+                    <td><code>Number("10")</code> &rarr; <code>10</code></td>
+                    <td><code>"5" - 2</code> &rarr; <code>3</code> (Subtraction coerces to number)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>To Boolean</strong></td>
+                    <td><code>Boolean(1)</code> &rarr; <code>true</code></td>
+                    <td>Evaluated in <code>if(x)</code> conditional expressions</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 class="sub-section-title">The Exact 8 Falsy Values in JavaScript</h4>
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Falsy Value</th>
+                    <th style="width: 35%;">Data Type</th>
+                    <th style="width: 40%;">Evaluation in Boolean Context</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>false</code></td><td>Boolean</td><td><code>false</code></td></tr>
+                  <tr><td><code>0</code>, <code>-0</code></td><td>Number</td><td><code>false</code></td></tr>
+                  <tr><td><code>0n</code></td><td>BigInt</td><td><code>false</code></td></tr>
+                  <tr><td><code>""</code> (Empty string)</td><td>String</td><td><code>false</code></td></tr>
+                  <tr><td><code>null</code></td><td>Null</td><td><code>false</code></td></tr>
+                  <tr><td><code>undefined</code></td><td>Undefined</td><td><code>false</code></td></tr>
+                  <tr><td><code>NaN</code></td><td>Number</td><td><code>false</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="note-card" style="border-left: 4px solid #10b981; background: var(--box-note-bg); margin: 1rem 0;">
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #10b981;">
+                <i class="fa-solid fa-lightbulb"></i> Crucial Exam Rule: Empty Arrays [] and Empty Objects {} are TRUTHY!
+              </h4>
+              <p class="nc-body">
+                Because arrays and objects are reference addresses existing in heap memory, they always evaluate to <strong>truthy</strong>!<br>
+                <code>Boolean([]) &rarr; true</code> &bull; <code>Boolean({}) &rarr; true</code>.
+              </p>
+            </div>
+
+            <!-- Interactive Type & Falsy Playground -->
+            <div class="event-loop-visualizer" style="margin-top: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 700;">
+                  <i class="fa-solid fa-vial" style="color: #f59e0b;"></i> Live Type &amp; Falsy Evaluator Playground
+                </h4>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Click any chip below to evaluate:</span>
+              </div>
+              <div class="terminal-presets" style="background: var(--sheet-bg); border-radius: 6px; padding: 0.5rem;">
+                <span class="preset-chip" onclick="evaluateTypeValue('emptyStr')">"" (Empty String)</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('strZero')">"0"</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('zero')">0</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('emptyArr')">[] (Empty Array)</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('emptyObj')">{} (Empty Object)</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('nullVal')">null</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('undefVal')">undefined</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('nanVal')">NaN</span>
+                <span class="preset-chip" onclick="evaluateTypeValue('floatAdd')">0.1 + 0.2</span>
+              </div>
+              <div id="typeEvaluatorResult" style="margin-top: 0.85rem;">
+                <div style="font-family: 'Courier New', Courier, monospace; font-size: 0.82rem; color: var(--text-muted); text-align: center; padding: 0.75rem;">
+                  Click any chip above to see dynamic type analysis in real-time!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 8: Practical Rules, 6 Classic Exam Traps & Master Recap -->
+          <div class="note-section">
+            <h3 class="section-title">8. Practical Web Dev Rules, 6 Classic Exam Traps &amp; Topic 2 Master Recap</h3>
+            
+            <div class="note-card" style="border-left: 4px solid #ef4444; background: var(--box-note-bg); margin-bottom: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #ef4444;">
+                <i class="fa-solid fa-triangle-exclamation"></i> The Most Frequent Student Lab Trap: HTML Inputs Are Always Strings!
+              </h4>
+              <p class="nc-body">
+                Even with <code>&lt;input type="number" id="age"&gt;</code>, reading <code>input.value</code> in JavaScript yields a <strong>string</strong> (e.g. <code>"25"</code>). Doing <code>input.value + 5</code> results in <code>"255"</code>! Always convert with <code>Number(input.value)</code>!
+              </p>
+            </div>
+
+            <h4 class="sub-section-title">6 Classic University Exam Traps Table</h4>
+            <div class="table-wrapper">
+              <table class="notes-table">
+                <thead>
+                  <tr>
+                    <th style="width: 25%;">Frequent Exam Trap</th>
+                    <th style="width: 35%;">Flawed Assumption</th>
+                    <th style="width: 40%;">Correct Architectural Reality</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Using var in modern code</strong></td>
+                    <td>Assumes <code>var</code> is block-scoped</td>
+                    <td><code>var</code> leaks outside blocks and allows accidental redeclaration bugs. Use <code>const</code>/<code>let</code>.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Assuming const freezes objects</strong></td>
+                    <td>Thinks <code>const user = {}</code> makes properties immutable</td>
+                    <td><code>const</code> only locks the variable pointer. Properties can still be modified.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Treating HTML inputs as numbers</strong></td>
+                    <td>Believes <code>type="number"</code> gives a numeric value in JS</td>
+                    <td><code>input.value</code> is always string. Must wrap with <code>Number()</code>.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. Confusing null and undefined</strong></td>
+                    <td>Thinks they are interchangeable</td>
+                    <td><code>undefined</code> = unassigned by engine. <code>null</code> = intentionally set by developer.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>5. Blindly trusting typeof for arrays</strong></td>
+                    <td>Expects <code>typeof []</code> to return <code>"array"</code></td>
+                    <td>Returns <code>"object"</code>! Always use <code>Array.isArray(val)</code>.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>6. Unintended type coercion</strong></td>
+                    <td><code>"10" + 5</code> results in <code>15</code></td>
+                    <td>Addition coerces to string: <code>"105"</code>. Subtraction coerces to number: <code>"10" - 5 = 5</code>.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 class="sub-section-title">Complete Practical Student Profile Lab Code</h4>
+            <div class="code-snippet">
+              <div class="code-header"><span><i class="fa-brands fa-html5"></i> Complete Student Profile Application</span></div>
+              <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    // 1. Primitives: String, Number, Boolean, Undefined, Null
+    const studentName = "Alex Smith";
+    let age = 21;
+    const marks = 85.5;
+    const isPassed = marks &gt;= 40.0;
+    let pendingRemarks;
+    const scholarshipRecipient = null;
+
+    // 2. Reference Types: Array &amp; Object
+    const subjects = ["HTML", "CSS", "JavaScript"];
+    const studentProfile = {
+      name: studentName,
+      age: age,
+      score: marks,
+      passed: isPassed,
+      courses: subjects
+    };
+
+    console.log("Name:", studentName, "| Type:", typeof studentName);
+    console.log("Score:", marks, "| Type:", typeof marks);
+    console.log("Passed:", isPassed, "| Type:", typeof isPassed);
+    console.log("Is subjects an Array?:", Array.isArray(subjects));
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- Topic 2 Master Recap Dashboard -->
+            <div class="recap-dashboard" style="margin-top: 1.5rem;">
+              <div class="recap-top-bar" style="background: linear-gradient(90deg, #f59e0b, #d97706, #3b82f6, #10b981);"></div>
+              
+              <div class="recap-grid">
+                
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-lock" style="color: #f59e0b;"></i>
+                    <span class="recap-metric-label">Declaration Rule</span>
+                  </div>
+                  <div class="recap-metric-value">const &gt; let &gt; var</div>
+                  <p class="recap-metric-desc"><code>const</code> by default, <code>let</code> when reassigning, eliminate <code>var</code> in modern code.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-check" style="color: #10b981;"></i> Block-scoped security
+                  </div>
+                </div>
+
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-layer-group" style="color: #3b82f6;"></i>
+                    <span class="recap-metric-label">7 Primitives</span>
+                  </div>
+                  <div class="recap-metric-value">Immutable Stack</div>
+                  <p class="recap-metric-desc">String, Number, BigInt, Boolean, Undefined, Null, Symbol. Passed by value.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-memory" style="color: #3b82f6;"></i> Call Stack storage
+                  </div>
+                </div>
+
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-cubes" style="color: #8b5cf6;"></i>
+                    <span class="recap-metric-label">Reference Types</span>
+                  </div>
+                  <div class="recap-metric-value">Mutable Heap</div>
+                  <p class="recap-metric-desc">Objects, Arrays, Functions. Copied by reference pointer address in memory.</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-arrows-split-up-and-left" style="color: #f59e0b;"></i> Shared references
+                  </div>
+                </div>
+
+                <div class="recap-metric-card">
+                  <div class="recap-metric-header">
+                    <i class="fa-solid fa-ban" style="color: #ef4444;"></i>
+                    <span class="recap-metric-label">8 Falsy Values</span>
+                  </div>
+                  <div class="recap-metric-value">false, 0, "", null...</div>
+                  <p class="recap-metric-desc">Plus <code>-0</code>, <code>0n</code>, <code>undefined</code>, <code>NaN</code>. All other values (inc. <code>[]</code>, <code>{}</code>) are truthy!</p>
+                  <div class="recap-footer-hint">
+                    <i class="fa-solid fa-shield" style="color: #10b981;"></i> Use === strictly
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Cheat Strip -->
+              <div class="recap-cheat-strip">
+                <div class="recap-cheat-label">
+                  <i class="fa-solid fa-key"></i> Quick Exam Rules
+                </div>
+                <div class="recap-cheat-pills">
+                  <span class="cheat-pill"><i class="fa-solid fa-lock"></i> const = Binding locked</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-bug"></i> typeof null === "object"</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-check"></i> Array.isArray() for arrays</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-circle-exclamation"></i> TDZ on let &amp; const</span>
+                  <span class="cheat-pill"><i class="fa-solid fa-triangle-exclamation"></i> inputs are always string</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
 
         <hr class="topic-divider">
 
